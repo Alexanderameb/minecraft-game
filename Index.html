@@ -2,114 +2,71 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="5;url=https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-    <title>Virus Instalado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Peligro! Virus Detectado</title>
     <style>
         body {
-            background-color: black;
-            color: red;
+            background-color: #000000;
+            color: #ff0000;
             font-family: 'Courier New', Courier, monospace;
             text-align: center;
-            padding: 50px;
-            animation: backgroundPulse 1s infinite alternate;
+            margin: 0;
+            padding: 0;
         }
-
-        @keyframes backgroundPulse {
-            0% { background-color: black; }
-            50% { background-color: darkred; }
-            100% { background-color: black; }
-        }
-
         h1 {
-            font-size: 60px;
-            text-transform: uppercase;
-            font-weight: bold;
-            text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
-            animation: blink 1s step-start infinite, shake 0.5s linear infinite;
+            font-size: 5em;
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+            animation: flicker 1.5s infinite alternate;
         }
-
-        @keyframes blink {
+        p {
+            font-size: 2em;
+            color: #ff4500;
+            animation: fadeIn 2s ease-in-out infinite alternate;
+        }
+        .warning {
+            font-size: 3em;
+            color: #ffff00;
+            background-color: #ff0000;
+            padding: 20px;
+            border-radius: 15px;
+            text-shadow: 0 0 10px #ff0000;
+        }
+        @keyframes flicker {
             0% { opacity: 1; }
             50% { opacity: 0.5; }
             100% { opacity: 1; }
         }
-
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            50% { transform: translateX(5px); }
-            75% { transform: translateX(-5px); }
-            100% { transform: translateX(5px); }
-        }
-
-        .message {
-            font-size: 30px;
-            margin-top: 20px;
-            text-shadow: 1px 1px 10px rgba(255, 0, 0, 0.8);
-            animation: messageFade 1s ease-in-out infinite, shakeMessage 0.5s linear infinite;
-        }
-
-        @keyframes messageFade {
+        @keyframes fadeIn {
             0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
-        }
-
-        @keyframes shakeMessage {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-10px); }
-            50% { transform: translateX(10px); }
-            75% { transform: translateX(-10px); }
-            100% { transform: translateX(10px); }
-        }
-
-        .warning {
-            color: yellow;
-            font-size: 25px;
-            font-weight: bold;
-            margin-top: 30px;
-            animation: pulseWarning 1s infinite alternate;
-        }
-
-        @keyframes pulseWarning {
-            0% { color: yellow; }
-            50% { color: orange; }
-            100% { color: yellow; }
-        }
-
-        .error {
-            font-size: 40px;
-            color: red;
-            text-shadow: 0 0 15px rgba(255, 0, 0, 1);
-            margin-top: 50px;
-            animation: blinkRed 0.5s step-start infinite;
-        }
-
-        @keyframes blinkRed {
-            0% { opacity: 1; }
-            50% { opacity: 0.3; }
             100% { opacity: 1; }
         }
-
+        .urgent {
+            font-size: 2.5em;
+            color: #ff6347;
+            text-shadow: 0 0 20px #ff6347, 0 0 30px #ff6347;
+            animation: blink 0.5s step-end infinite;
+        }
+        @keyframes blink {
+            50% { visibility: hidden; }
+            100% { visibility: visible; }
+        }
+        .red-bg {
+            background-color: #ff0000;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+        }
     </style>
 </head>
 <body>
-    <h1>¡Virus Instalado con Éxito!</h1>
-    <p class="message">Su sistema está comprometido.</p>
-    <p class="message">Accediendo a sus archivos personales...</p>
-    <p class="message">Iniciando protocolo de destrucción...</p>
-    <p class="message">Por favor, no apague su dispositivo.</p>
-    <p class="message">El virus ha tomado control de su dispositivo.</p>
-    <p class="message">¡Su teléfono ya no es seguro!</p>
-    <p class="message">El virus se está ejecutando...</p>
-    
-    <p class="error">¡ERROR CRÍTICO!</p>
-
-    <p class="warning">¡ALERTA! No apague su teléfono o los datos podrían perderse permanentemente.</p>
-
-    <audio autoplay>
-        <source src="https://www.soundjay.com/button/beep-07.wav" type="audio/wav">
-        Tu navegador no soporta la reproducción de audio.
-    </audio>
+    <h1>¡Alerta! Virus Detectado</h1>
+    <p class="warning">El sistema ha sido infectado. Acceso no autorizado detectado.</p>
+    <p>Los archivos críticos están siendo corrompidos... ¡No apagues el dispositivo!</p>
+    <p class="urgent">¡Tiempo límite alcanzado en 5 segundos!</p>
+    <div class="red-bg">
+        <p>El virus se está propagando. Tu dispositivo está en peligro inminente. ¡Actúa rápido!</p>
+    </div>
+    <p class="urgent">¡Te quedan segundos para desconectar el dispositivo antes de que sea tarde!</p>
 </body>
 </html>
